@@ -20,6 +20,7 @@
                 <button id="Contact"><a href="#contact">Contact</a></button>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">☰</div>
     </header>
     <section class="hero" id="home">
         <div class="heroDiv">
@@ -27,13 +28,13 @@
             <h2>Full stack developer and Java programmer </h2>
         </div>
         <div class="Logo">
-            <img src="image/OIP.webp" alt="">
+            <img src="OIP.webp" alt="">
         </div>
     </section>
     <section class="section-1" id="AboutUs">
         <div class="about-div">
             <div id="about-profile">
-                <img src="image/OIP.webp" alt="">
+                <img src="OIP.webp" alt="">
             </div>
             <div id="about-content">
                 <h2>About Me</h2>
@@ -99,8 +100,14 @@
             <p>© 2025 Your Name | All Rights Reserved</p>
         </div>
     </footer>
-
-
 </body>
 
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.querySelector("#navigation ul");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 </html>
