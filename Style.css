@@ -22,21 +22,21 @@ body {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #0A2540, #133B6F);
-  padding: 0 50px;
+  padding: 0 20px;
   color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(6px);
+  flex-wrap:nowrap;
 }
 
 .header h3 {
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #f1c40f;
+  white-space: nowrap;
 }
 
 #navigation ul {
@@ -55,9 +55,10 @@ body {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  padding: 10px;
+  padding: 8px 10px;
   position: relative;
   transition: all 0.3s ease;
+
 
 }
 
@@ -79,6 +80,35 @@ body {
 #navigation ul button a:hover {
   color: #f1c40f;
 }
+
+#navigation ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #f1c40f;
+  transition: width 0.3s ease;
+}
+
+#navigation ul li a:hover::after {
+  width: 100%;
+}
+
+#navigation ul li a:hover {
+  color: #f1c40f;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #f1c40f;
+  cursor: pointer;
+  user-select: none;
+  margin-left:auto;
+}
+
 
 /* ===== Hero Section ===== */
 .hero {
@@ -334,5 +364,33 @@ footer {
   .Logo img {
     width: 200px;
     margin-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #navigation ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #0A2540;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  #navigation ul.active {
+    display: flex;
+    height: 170px;
+    width: 200px;
+    border-radius: 20px;
+  }
+  .hamburger{
+    display: inline;
   }
 }
